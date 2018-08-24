@@ -1,0 +1,3 @@
+# EssentialsCore
+
+An essentials rewrite
