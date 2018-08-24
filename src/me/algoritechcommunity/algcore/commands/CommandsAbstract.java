@@ -8,6 +8,12 @@ import java.util.HashMap;
 
 public abstract class CommandsAbstract {
 
+    /*
+    * Komut oluşturmak için oluşturduğun
+    * classın bu classı extends etmesi ve
+    * CommandType a eklenmiş olması gerekiyor
+    * */
+
     private final AlgCore PLUGIN;
     private final String LABEL;
     private final String[] ALIASES;
