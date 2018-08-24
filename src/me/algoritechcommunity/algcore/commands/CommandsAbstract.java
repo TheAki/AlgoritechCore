@@ -36,10 +36,6 @@ public abstract class CommandsAbstract {
 
     private void registerCommand() {
         this.COMMAND_OBJECTS.put(this.LABEL, this);
-
-        for(String alias : this.ALIASES) {
-            this.COMMAND_OBJECTS.put(alias,this);
-        }
     }
 
     abstract boolean onCommand(CommandSender sender, Command command, String label, String[] args);
