@@ -21,7 +21,7 @@ public class CommandHandler implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        if(this.COMMAND_OBJECTS.containsKey(label)) {
+        if(this.COMMAND_OBJECTS.containsKey(command.getName())) {
             return this.COMMAND_OBJECTS.get(command.getName()).onCommand(sender,command,label,args);
         }
         return false;
