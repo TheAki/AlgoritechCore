@@ -23,6 +23,10 @@ public class CommandBuilder {
     }
 
     public CommandManager build() {
-        return new CommandManager(this.PLUGIN,ENABLED_COMMANDS);
+        CommandManager manager = new CommandManager(this.PLUGIN,ENABLED_COMMANDS);
+        for(CommandAbstract subclass : this.ENABLED_COMMANDS.values()) {
+            this.PLUGIN.getCommand(subclass.getLabel()).setExecutor(manager);
+        }
+        return manager;
     }
 }

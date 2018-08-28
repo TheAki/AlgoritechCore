@@ -18,7 +18,6 @@ public class CommandManager implements CommandExecutor {
     public CommandManager(AlgCore plugin, HashMap<String, CommandAbstract> objects) {
         this.PLUGIN = plugin;
         this.COMMAND_OBJECTS = objects;
-        this.registerExecutor();
     }
 
 
@@ -29,11 +28,5 @@ public class CommandManager implements CommandExecutor {
             return this.COMMAND_OBJECTS.get(command.getName()).onCommand(sender,command,label,args);
         }
         return false;
-    }
-
-    private void registerExecutor() {
-        for(CommandAbstract subclass : this.COMMAND_OBJECTS.values()) {
-            this.PLUGIN.getCommand(subclass.getLabel()).setExecutor(this);
-        }
     }
 }
