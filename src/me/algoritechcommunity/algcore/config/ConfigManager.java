@@ -4,14 +4,16 @@ import me.algoritechcommunity.algcore.AlgCore;
 import me.algoritechcommunity.algcore.config.configs.ConfigLocale;
 import me.algoritechcommunity.algcore.config.configs.ConfigMain;
 
-public class ConfigMediator {
+import java.util.List;
+
+public class ConfigManager {
 
     private final AlgCore PLUGIN;
 
     private final ConfigMain CONFIG_MAIN;
     private final ConfigLocale CONFIG_LOCALE;
 
-    public ConfigMediator (AlgCore plugin) {
+    public ConfigManager(AlgCore plugin) {
         this.PLUGIN = plugin;
         this.CONFIG_MAIN = new ConfigMain(this.PLUGIN);
         this.CONFIG_LOCALE = new ConfigLocale(this.PLUGIN);
@@ -33,5 +35,52 @@ public class ConfigMediator {
     public void saveAll() {
         this.CONFIG_MAIN.save();
         this.CONFIG_LOCALE.save();
+    }
+
+    //TODO Returnleri kaldır
+
+
+    public String getValue(ValueType.String type){
+        switch (type) {
+
+        }
+
+        return null;
+    }
+
+    public List<String> getValue(ValueType.StringList type) {
+        switch (type) {
+
+        }
+
+        return null;
+    }
+
+    public int getValue(ValueType.Integer type){
+
+        switch (type) {
+
+        }
+
+        return 0;
+    }
+
+    public double getValue(ValueType.Double type) {
+
+        switch (type) {
+
+        }
+
+        return 0;
+    }
+
+    public boolean getValue(ValueType.Boolean type) {
+
+        switch (type) {
+
+
+        }
+
+        return false;
     }
 }
