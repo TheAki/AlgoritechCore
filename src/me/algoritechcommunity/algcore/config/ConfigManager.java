@@ -17,6 +17,8 @@ public class ConfigManager {
         this.PLUGIN = plugin;
         this.CONFIG_MAIN = new ConfigMain(this.PLUGIN);
         this.CONFIG_LOCALE = new ConfigLocale(this.PLUGIN);
+
+        this.PLUGIN.getLogger().info("Config ve Locale dosyalari loadlandi!");
     }
 
     public ConfigMain getConfigMain() {
