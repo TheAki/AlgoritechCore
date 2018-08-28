@@ -1,7 +1,5 @@
 package me.algoritechcommunity.algcore.commands.factory;
 
-import me.algoritechcommunity.algcore.config.ValueType;
-
 public enum CommandType {
     HEAL("heal", "hil");
 

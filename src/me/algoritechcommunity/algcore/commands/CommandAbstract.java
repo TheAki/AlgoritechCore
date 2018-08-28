@@ -4,8 +4,6 @@ import me.algoritechcommunity.algcore.AlgCore;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
-import java.util.HashMap;
-
 public abstract class CommandAbstract {
 
     /*

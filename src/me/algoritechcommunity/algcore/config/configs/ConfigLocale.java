@@ -1,7 +1,6 @@
 package me.algoritechcommunity.algcore.config.configs;
 
 import me.algoritechcommunity.algcore.AlgCore;
-import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;

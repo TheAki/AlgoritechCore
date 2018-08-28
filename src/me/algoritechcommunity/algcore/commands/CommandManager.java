@@ -1,8 +1,6 @@
 package me.algoritechcommunity.algcore.commands;
 
 import me.algoritechcommunity.algcore.AlgCore;
-import me.algoritechcommunity.algcore.commands.factory.CommandFactory;
-import me.algoritechcommunity.algcore.commands.factory.CommandType;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;

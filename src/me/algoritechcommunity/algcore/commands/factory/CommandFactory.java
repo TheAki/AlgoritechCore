@@ -4,8 +4,6 @@ import me.algoritechcommunity.algcore.AlgCore;
 import me.algoritechcommunity.algcore.commands.CommandAbstract;
 import me.algoritechcommunity.algcore.commands.commands.Heal;
 
-import java.util.HashMap;
-
 public class CommandFactory {
     private final AlgCore PLUGIN;
 

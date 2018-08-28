@@ -21,7 +21,7 @@ public class AlgCore extends JavaPlugin {
 
     }
 
-    public ConfigManager getConfigManager() {
+    public ConfigManager getCManager() {
         return this.configManager;
     }
 
