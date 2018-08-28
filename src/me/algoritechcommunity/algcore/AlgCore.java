@@ -1,6 +1,7 @@
 package me.algoritechcommunity.algcore;
 
-import me.algoritechcommunity.algcore.commands.CommandHandler;
+import me.algoritechcommunity.algcore.commands.CommandManager;
+import me.algoritechcommunity.algcore.commands.factory.CommandBuilder;
 import me.algoritechcommunity.algcore.commands.factory.CommandType;
 import me.algoritechcommunity.algcore.config.ConfigManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -8,6 +9,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class AlgCore extends JavaPlugin {
 
     private ConfigManager configManager;
+    private CommandManager commandManager;
+
     @Override
     public void onEnable() {
         this.configManager = new ConfigManager(this);
@@ -23,8 +26,9 @@ public class AlgCore extends JavaPlugin {
     }
 
     private void enableCommands() {
-        new CommandHandler(this)
-                .enableCommand(CommandType.HEAL)
-                .registerExecutor();
+
+        this.commandManager = new CommandBuilder(this)
+                .registerCommand(CommandType.HEAL)
+                .build();
     }
 }

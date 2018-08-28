@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 
 import java.util.HashMap;
 
-public abstract class CommandsAbstract {
+public abstract class CommandAbstract {
 
     /*
     * Komut oluşturmak için oluşturduğun
@@ -17,7 +17,6 @@ public abstract class CommandsAbstract {
     private final AlgCore PLUGIN;
     private final String LABEL;
     private final String[] ALIASES;
-    private final HashMap<String, CommandsAbstract> COMMAND_OBJECTS;
 
     public AlgCore getPlugin() {
         return this.PLUGIN;
@@ -31,18 +30,11 @@ public abstract class CommandsAbstract {
         return this.ALIASES;
     }
 
-    public CommandsAbstract(AlgCore plugin, HashMap<String, CommandsAbstract> commandObjects, String label, String... aliases) {
+    public CommandAbstract(AlgCore plugin, String label, String... aliases) {
         this.PLUGIN = plugin;
         this.LABEL = label;
         this.ALIASES = aliases;
-        this.COMMAND_OBJECTS = commandObjects;
-
-        this.registerCommand();
     }
 
-    private void registerCommand() {
-        this.COMMAND_OBJECTS.put(this.LABEL, this);
-    }
-
-    abstract boolean onCommand(CommandSender sender, Command command, String label, String[] args);
+    protected abstract boolean onCommand(CommandSender sender, Command command, String label, String[] args);
 }

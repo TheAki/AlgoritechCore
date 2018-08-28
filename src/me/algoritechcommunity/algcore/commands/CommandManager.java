@@ -9,14 +9,16 @@ import org.bukkit.command.CommandSender;
 
 import java.util.HashMap;
 
-public class CommandHandler implements CommandExecutor {
+public class CommandManager implements CommandExecutor {
 
     private final AlgCore PLUGIN;
 
-    private final HashMap<String,CommandsAbstract>  COMMAND_OBJECTS = new HashMap<>();
+    private final HashMap<String, CommandAbstract>  COMMAND_OBJECTS;
 
-    public CommandHandler(AlgCore plugin) {
+    public CommandManager(AlgCore plugin, HashMap<String, CommandAbstract> objects) {
         this.PLUGIN = plugin;
+        this.COMMAND_OBJECTS = objects;
+        this.registerExecutor();
     }
 
 
@@ -29,13 +31,8 @@ public class CommandHandler implements CommandExecutor {
         return false;
     }
 
-    public CommandHandler enableCommand(CommandType type) {
-        this.COMMAND_OBJECTS.put(type.getLabel(), new CommandFactory().getInstance(type));
-        return this;
-    }
-
-    public void registerExecutor() {
-        for(CommandsAbstract subclass : this.COMMAND_OBJECTS.values()) {
+    private void registerExecutor() {
+        for(CommandAbstract subclass : this.COMMAND_OBJECTS.values()) {
             this.PLUGIN.getCommand(subclass.getLabel()).setExecutor(this);
         }
     }
