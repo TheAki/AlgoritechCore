@@ -1,3 +1,3 @@
-# EssentialsCore
+# AlgoritechCore
 
 An essentials rewrite
