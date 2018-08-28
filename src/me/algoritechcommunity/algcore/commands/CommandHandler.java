@@ -1,6 +1,8 @@
 package me.algoritechcommunity.algcore.commands;
 
 import me.algoritechcommunity.algcore.AlgCore;
+import me.algoritechcommunity.algcore.commands.factory.CommandFactory;
+import me.algoritechcommunity.algcore.commands.factory.CommandType;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -28,14 +30,11 @@ public class CommandHandler implements CommandExecutor {
     }
 
     public CommandHandler enableCommand(CommandType type) {
-
-        switch(type) {
-        }
+        this.COMMAND_OBJECTS.put(type.getLabel(), new CommandFactory().getInstance(type));
         return this;
     }
 
     public void registerExecutor() {
-
         for(CommandsAbstract subclass : this.COMMAND_OBJECTS.values()) {
             this.PLUGIN.getCommand(subclass.getLabel()).setExecutor(this);
         }
